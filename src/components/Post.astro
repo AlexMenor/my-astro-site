@@ -36,13 +36,15 @@ const formattedPublishedAt = new Intl.DateTimeFormat("en-US", {
   target="_blank"
   rel="noopener noreferrer"
 >
-  <p class="text-xs opacity-40 uppercase">{formattedPublishedAt}</p>
+  <p class="text-xs text-slate-200/40 uppercase">{formattedPublishedAt}</p>
   <h2 class="mt-1">{title}</h2>
-  <div class="flex items-center text-xs opacity-60 mt-1">
+  <div class="flex items-center text-xs mt-1">
     <p class="mr-3">{readingTimeMinutes} min read</p>
     {
       tags.map((tag) => (
-        <p class="capitalize bg-slate-200/30 rounded-md p-1 mr-1">{tag}</p>
+        <p class="capitalize bg-slate-200/[0.18] text-slate-200/60 rounded-md p-1 mr-1">
+          {tag}
+        </p>
       ))
     }
   </div>
