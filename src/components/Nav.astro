@@ -1,3 +1,40 @@
-<nav class="w-full border-b border-gray-100/30 px-20 flex items-center h-14">
-  <h1 class="font-display text-3xl">Alex Menor</h1>
+---
+import github from "../../public/assets/github.svg?raw";
+import twitter from "../../public/assets/twitter.svg?raw";
+import linkedin from "../../public/assets/linkedin.svg?raw";
+
+const socials = [
+  {
+    icon: github,
+    url: "https://github.com/alexmenor",
+  },
+  {
+    icon: twitter,
+    url: "https://twitter.com/alex4menor",
+  },
+  {
+    icon: linkedin,
+    url: "https://www.linkedin.com/in/alejandro-menor-molinero/",
+  },
+];
+---
+
+<nav
+  class="sticky top-0 bg-black w-full border-b border-slate-200/40 px-10 xl:px-36 flex items-center justify-between h-16 md:h-20"
+>
+  <h1 class="font-display md:text-4xl text-3xl select-none">Alex Menor</h1>
+  <div class="flex items-center space-x-3 lg:space-x-5 mb-1">
+    {
+      socials.map(({ icon, url }) => (
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          class="fill-current h-[18px] w-[18px] lg:h-6 lg:w-6 hover:opacity-80"
+          href={url}
+        >
+          <Fragment set:html={icon} />
+        </a>
+      ))
+    }
+  </div>
 </nav>

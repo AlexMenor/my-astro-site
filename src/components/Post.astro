@@ -1,0 +1,49 @@
+---
+export interface Props {
+  title: string;
+  publishedAt: string;
+  readingTimeMinutes: number;
+  tags: string[];
+  id: number;
+  url: string;
+  views: number;
+  positive: number;
+  commentsCount: number;
+}
+
+const {
+  commentsCount,
+  id,
+  positive,
+  publishedAt,
+  readingTimeMinutes,
+  tags,
+  title,
+  url,
+  views,
+} = Astro.props;
+
+const formattedPublishedAt = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+}).format(new Date(publishedAt));
+---
+
+<a
+  class="block hover:opacity-80"
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <p class="text-xs opacity-40 uppercase">{formattedPublishedAt}</p>
+  <h2 class="mt-1">{title}</h2>
+  <div class="flex items-center text-xs opacity-60 mt-1">
+    <p class="mr-3">{readingTimeMinutes} min read</p>
+    {
+      tags.map((tag) => (
+        <p class="capitalize bg-slate-200/30 rounded-md p-1 mr-1">{tag}</p>
+      ))
+    }
+  </div>
+</a>

@@ -3,15 +3,147 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+
+import { Icon } from "astro-icon";
+import Post from "../components/Post.astro";
+
+const body = await fetch("https://dev.to/api/articles/me", {
+  headers: {
+    "api-key": import.meta.env.DEV_TO_API_KEY,
+  },
+}).then((res) => res.json());
+
+const posts: {
+  title: string;
+  coverImage: string;
+  publishedAt: string;
+  readingTimeMinutes: number;
+  slug: string;
+  tags: string[];
+  id: number;
+  url: string;
+  views: number;
+  positive: number;
+  commentsCount: number;
+}[] = [];
+
+for (const post of body.slice(0, 5)) {
+  posts.push({
+    title: post.title,
+    coverImage: post.cover_image,
+    publishedAt: post.published_at,
+    readingTimeMinutes: post.reading_time_minutes,
+    slug: post.slug,
+    tags: post.tag_list,
+    id: post.id,
+    url: post.canonical_url,
+    views: post.page_views_count,
+    positive: post.positive_reactions_count,
+    commentsCount: post.comments_count,
+  });
+}
 ---
 
 <html lang="en" class="h-full">
   <head>
     <MainHead />
   </head>
-  <body class="bg-black text-white min-h-full flex flex-col">
+  <body
+    class="bg-black text-slate-200 min-h-full flex flex-col selection:bg-cyan-700"
+  >
     <Nav />
-    <main class="flex-1 min-h-0"></main>
+    <main class="flex-1 min-h-0">
+      <section class="xl:px-36 border-b border-slate-200/40 px-5">
+        <div
+          class="xl:border-x border-slate-200/40 xl:pb-0 xl:pt-3.5 md:pt-6 md:pb-2 pt-8 pb-6"
+        >
+          <p
+            class="font-display text-[4.5rem] md:text-[8rem] xl:text-[12rem] leading-none text-center"
+          >
+            I do Full Stack Development.
+          </p>
+        </div>
+      </section>
+      <section
+        class="xl:px-36 space-y-5 md:space-y-0 flex-col md:flex-row px-5 flex md:justify-between align-center py-8 md:py-7 border-b border-slate-200/40 uppercase text-sm md:text-base"
+      >
+        <div class="flex items-center">
+          <Icon
+            class="text-slate-200/40 w-10 h-10 flex-shrink-0"
+            pack="ph"
+            name="globe-thin"
+          />
+          <div class="ml-3 md:ml-2">
+            <p>Freelance</p>
+            <p class="text-xs opacity-50">Based in Spain</p>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <Icon
+            class="text-slate-200/40 w-10 h-10 flex-shrink-0"
+            pack="ph"
+            name="airplane-takeoff-thin"
+          />
+          <div class="ml-3 md:ml-2">
+            <p>3+ years of experience</p>
+            <p class="text-xs opacity-50">Mainly in fast-paced environments</p>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <Icon
+            class="text-slate-200/40 w-10 h-10 flex-shrink-0"
+            pack="ph"
+            name="sketch-logo-thin"
+          />
+          <div class="ml-3 md:ml-2">
+            <p>Focus on delivering value</p>
+            <p class="text-xs opacity-50">Ready to wear different hats</p>
+          </div>
+        </div>
+      </section>
+      <section class="md:px-16 px-5 xl:px-36 border-b border-slate-200/40">
+        <div
+          class="py-8 md:py-10 xl:border-x border-slate-200/40 xl:py-10 flex items-center justify-center"
+        >
+          <p
+            class="xl:max-w-[50%] text-xl md:text-2xl xl:text-3xl text-slate-200/50 leading-snug"
+          >
+            Software should always be about <span class="text-slate-200/90"
+              >solving problems.</span
+            >
+            <br />
+            I'm a technical person but I think that good understanding of other areas
+            like business or design is essential to build <span
+              class="text-slate-200/90">great products.</span
+            >
+          </p>
+        </div>
+      </section>
+      <section class="md:px-16 px-5 xl:px-36 border-b border-slate-200/40">
+        <div
+          class="py-8 md:py-10 xl:border-x border-slate-200/40 xl:py-10 flex flex-col md:flex-row justify-center"
+        >
+          <div class="flex-1 md:pr-5 lg:px-5">
+            <h1 class="text-4xl font-display">My stack</h1>
+          </div>
+          <div class="border-slate-200/40 md:border-l flex-1 md:pl-5 lg:px-5">
+            <div class="flex justify-between items-center">
+              <h1 class="text-4xl font-display">My latest posts</h1>
+              <a
+                class="block ml-2 text-sm opacity-80 hover:opacity-60"
+                href="http://dev.to/alexmenor"
+                target="_blank"
+                rel="noopener noreferrer">See all</a
+              >
+            </div>
+
+            <div class="space-y-6 mt-8">
+              {posts.map((post) => <Post {...post} />)}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <Footer />
   </body>
 </html>
