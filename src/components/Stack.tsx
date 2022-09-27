@@ -26,12 +26,10 @@ const shuffleArray = function <T>(array: T[]): T[] {
 };
 
 function Card({
-  name,
   icon: Icon,
   flipped,
   onClick,
 }: {
-  name: string;
   icon: typeof ReactIcon;
   flipped: boolean;
   onClick?: () => void;
@@ -79,10 +77,12 @@ export default function Stack() {
 
   useEffect(() => {
     const single = flipped.filter((i) => {
-      const pairFound = flipped.find(
-        (j) =>
-          i !== j && stackOfTechnologies[i].name === stackOfTechnologies[j].name
-      );
+      const pairFound =
+        flipped.find(
+          (j) =>
+            i !== j &&
+            stackOfTechnologies[i].name === stackOfTechnologies[j].name
+        ) !== undefined;
       return !pairFound;
     });
 
@@ -105,7 +105,6 @@ export default function Stack() {
           <Card
             icon={technology.icon}
             key={i}
-            name={technology.name}
             flipped={flip}
             onClick={flip ? undefined : () => onClick(i)}
           />
