@@ -1,5 +1,5 @@
-import { useEffect, useReducer, useRef, useState } from "react";
-import ReactIcon from "~icons/akar-icons/react-fill";
+import { useEffect, useRef, useState } from "react";
+import ReactIcon from "~icons/logos/react";
 import ElectronIcon from "~icons/logos/electron";
 import TypescriptIcon from "~icons/vscode-icons/file-type-typescript-official";
 import NodeIcon from "~icons/vscode-icons/file-type-node";
