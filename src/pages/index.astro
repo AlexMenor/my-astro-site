@@ -128,15 +128,12 @@ for (const post of body.slice(0, 5)) {
         <div
           class="py-8 md:py-10 xl:border-x border-slate-200/40 xl:py-10 flex flex-col md:flex-row justify-center"
         >
-          <div class="flex-1 md:pr-5 lg:px-5">
-            <h1 class="text-4xl font-display">My stack</h1>
-            <Stack client:visible />
-          </div>
+          <Stack client:visible />
           <div class="border-slate-200/40 md:border-l flex-1 md:pl-5 lg:px-5">
             <div class="flex justify-between items-center mt-12 md:mt-0">
               <h1 class="text-4xl font-display">My latest posts</h1>
               <a
-                class="block ml-2 text-sm text-slate-200/80 hover:opacity-60"
+                class="block text-sm text-slate-200/80 hover:opacity-60"
                 href="http://dev.to/alexmenor"
                 target="_blank"
                 rel="noopener noreferrer">See all</a

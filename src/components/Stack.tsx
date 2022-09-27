@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import ReactIcon from "~icons/akar-icons/react-fill";
 import ElectronIcon from "~icons/logos/electron";
 import TypescriptIcon from "~icons/vscode-icons/file-type-typescript-official";
@@ -28,10 +28,12 @@ const shuffleArray = function <T>(array: T[]): T[] {
 function Card({
   icon: Icon,
   flipped,
+  showGlow,
   onClick,
 }: {
   icon: typeof ReactIcon;
   flipped: boolean;
+  showGlow: boolean;
   onClick?: () => void;
 }) {
   return (
@@ -42,6 +44,10 @@ function Card({
       } rounded relative`}
       style={{ perspective: "500px" }}
     >
+      <div
+        style={{ opacity: showGlow ? 1 : 0 }}
+        className="absolute -inset-1 rounded bg-emerald-500 blur-sm transition-opacity delay-200"
+      ></div>
       <div
         className={`absolute card-back inset-0 rounded transition-all duration-300`}
         style={{
@@ -70,6 +76,17 @@ export default function Stack() {
     ...technologies,
   ]);
   const [flipped, setFlipped] = useState<number[]>([]);
+  const [timeoutShowImDoneExpired, setTimeoutShowImDoneExpired] =
+    useState(false);
+  const timeoutImDoneRef = useRef<number>();
+
+  useEffect(() => {
+    if (timeoutImDoneRef.current === undefined && flipped.length !== 0) {
+      timeoutImDoneRef.current = setTimeout(() => {
+        setTimeoutShowImDoneExpired(true);
+      }, 8000);
+    }
+  }, [flipped]);
 
   useEffect(() => {
     setStackOfTechnologies(shuffleArray(stackOfTechnologies));
@@ -97,19 +114,41 @@ export default function Stack() {
     setFlipped([...flipped, i]);
   }
 
+  const gameIsOver = flipped.length === stackOfTechnologies.length;
+
+  const showImDone = timeoutShowImDoneExpired && !gameIsOver;
+
+  function imDone() {
+    setFlipped(Array.from(Array(stackOfTechnologies.length).keys()));
+  }
+
   return (
-    <div className="flex flex-wrap gap-4 lg:gap-5 mt-8 justify-center md:justify-start">
-      {stackOfTechnologies.map((technology, i) => {
-        const flip = flipped.includes(i);
-        return (
-          <Card
-            icon={technology.icon}
-            key={i}
-            flipped={flip}
-            onClick={flip ? undefined : () => onClick(i)}
-          />
-        );
-      })}
+    <div className="flex-1 md:pr-5 lg:px-5">
+      <div className="justify-between flex items-center">
+        <h1 className="text-4xl font-display">My stack</h1>
+        {showImDone && (
+          <button
+            onClick={imDone}
+            className="text-sm text-slate-200/80 hover:opacity-60"
+          >
+            I'm done please let me see
+          </button>
+        )}
+      </div>
+      <div className="flex flex-wrap gap-4 lg:gap-5 mt-8 justify-center md:justify-start">
+        {stackOfTechnologies.map((technology, i) => {
+          const flip = flipped.includes(i);
+          return (
+            <Card
+              showGlow={gameIsOver}
+              icon={technology.icon}
+              key={i}
+              flipped={flip}
+              onClick={flip ? undefined : () => onClick(i)}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
