@@ -75,22 +75,12 @@ export default function Stack() {
     ...technologies,
     ...technologies,
   ]);
-  const [flipped, setFlipped] = useState<number[]>([]);
-  const [timeoutShowImDoneExpired, setTimeoutShowImDoneExpired] =
-    useState(false);
-  const timeoutImDoneRef = useRef<number>();
-
-  useEffect(() => {
-    if (timeoutImDoneRef.current === undefined && flipped.length !== 0) {
-      timeoutImDoneRef.current = setTimeout(() => {
-        setTimeoutShowImDoneExpired(true);
-      }, 8000);
-    }
-  }, [flipped]);
 
   useEffect(() => {
     setStackOfTechnologies(shuffleArray(stackOfTechnologies));
   }, []);
+
+  const [flipped, setFlipped] = useState<number[]>([]);
 
   useEffect(() => {
     const single = flipped.filter((i) => {
@@ -113,6 +103,19 @@ export default function Stack() {
   function onClick(i: number) {
     setFlipped([...flipped, i]);
   }
+
+  const [timeoutShowImDoneExpired, setTimeoutShowImDoneExpired] =
+    useState(false);
+
+  const timeoutImDoneRef = useRef<number>();
+
+  useEffect(() => {
+    if (timeoutImDoneRef.current === undefined && flipped.length !== 0) {
+      timeoutImDoneRef.current = setTimeout(() => {
+        setTimeoutShowImDoneExpired(true);
+      }, 8000);
+    }
+  }, [flipped]);
 
   const gameIsOver = flipped.length === stackOfTechnologies.length;
 
