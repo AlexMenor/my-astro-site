@@ -46,7 +46,7 @@ function Card({
     >
       <div
         style={{ opacity: showGlow ? 1 : 0 }}
-        className="absolute -inset-1 rounded bg-emerald-500 blur-sm transition-opacity delay-200"
+        className="absolute -inset-1 rounded bg-emerald-500 blur-sm transition-opacity delay-300"
       ></div>
       <div
         className={`absolute card-back inset-0 rounded transition-all duration-300`}
@@ -113,7 +113,7 @@ export default function Stack() {
     if (timeoutImDoneRef.current === undefined && flipped.length !== 0) {
       timeoutImDoneRef.current = setTimeout(() => {
         setTimeoutShowImDoneExpired(true);
-      }, 8000);
+      }, 5000);
     }
   }, [flipped]);
 

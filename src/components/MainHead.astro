@@ -1,26 +1,41 @@
 ---
 import "../styles/global.css";
 
-export interface Props {
-  title?: string;
-  description?: string;
-}
-const {
-  title = "Alex Menor - Full Stack Developer",
-  description = "The personal site of Alex Menor.",
-} = Astro.props;
+const title = "Alex Menor - Full Stack Developer";
+const description =
+  "Alex is a full stack developer based in Spain that loves to build great products, mainly on the web.";
+const host = import.meta.env.HOST;
+const ogImage = `${host}/og.png`;
 ---
 
-<meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
-<meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />
 <title>{title}</title>
-<meta name="twitter:card" content="summary_large_image" />
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<meta name="generator" content={Astro.generator} />
 <meta property="og:title" content={title} />
-<meta property="og:image" content="https://hell.meiert.org/core/png/test.png" />
-
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content="Banner for alexmenor.es" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@alex4menor" /><meta
+  name="twitter:title"
+  content={title}
+/>
+<meta name="twitter:description" content={description} /><meta
+  name="twitter:image"
+  content={ogImage}
+/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="canonical" href={host} />
+<meta name="theme-color" content="#000000" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
