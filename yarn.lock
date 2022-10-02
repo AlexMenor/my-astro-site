@@ -424,16 +424,6 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.14.54.tgz#de2a4be678bd4d0d1ffbb86e6de779cde5999028"
   integrity sha512-bZBrLAIX1kpWelV0XemxBZllyRmM6vgFQQG2GdNb+r3Fkp0FOh1NJSvekXDs7jq70k4euu1cryLMfU+mTXlEpw==
 
-"@fontsource/bebas-neue@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/bebas-neue/-/bebas-neue-4.5.9.tgz#66e73f9a1fc10575a679f7699a47b70fd3ee7e40"
-  integrity sha512-xacwu7elbiZIKgmzE0U4U29oh/WjoAmYLg2Eq9vEvq3cJqfO/wRkQZpNS6o1WU1i804AzJF//91E16c9+VgQlA==
-
-"@fontsource/inter@^4.5.13":
-  version "4.5.13"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.13.tgz#db4b0177992091816962c4a4a24b1e060cc750bf"
-  integrity sha512-nABtF6jNZZHrotLRiGBByhG7NKJGJHgMbX5W8v6C/7nSdyiWtMRfZX7AMIECDLYGUOEArZDeVO/SbkgwKLrLJw==
-
 "@iconify/json@^2.1.113":
   version "2.1.113"
   resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.1.113.tgz#1053327011ae2ef13fcc2236853a6378ee43ccc1"

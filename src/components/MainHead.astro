@@ -1,7 +1,5 @@
 ---
 import "../styles/global.css";
-import "@fontsource/bebas-neue";
-import "@fontsource/inter";
 
 const title = "Alex Menor - Full Stack Developer";
 const description =
@@ -17,7 +15,23 @@ const ogImage = `${host}/og.png`;
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 />
-<meta name="generator" content={Astro.generator} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="canonical" href={host} />
+<meta name="theme-color" content="#000000" />
+<link
+  rel="preload"
+  href="/Inter.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin="anonymous"
+/>
+<link
+  rel="preload"
+  href="/BebasNeue.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin="anonymous"
+/>
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
@@ -34,6 +48,26 @@ const ogImage = `${host}/og.png`;
   name="twitter:image"
   content={ogImage}
 />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="canonical" href={host} />
-<meta name="theme-color" content="#000000" />
+<meta name="generator" content={Astro.generator} />
+
+<style>
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/Inter.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/BebasNeue.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+</style>
