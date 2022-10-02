@@ -36,18 +36,17 @@ const ogImage = `${host}/og.png`;
 <link rel="canonical" href={host} />
 <meta name="theme-color" content="#000000" />
 
-<link rel="preload" href="/Inter.ttf" as="font" />
-<link rel="preload" href="/BebasNeue.ttf" as="font" />
-
-<style>
-  @font-face {
-    font-family: "Inter";
-    src: url("/Inter.ttf");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Bebas Neue";
-    src: url("/BebasNeue.ttf");
-    font-display: swap;
-  }
-</style>
+<link
+  rel="preload"
+  href="/Inter.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin="anonymous"
+/>
+<link
+  rel="preload"
+  href="/BebasNeue.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin="anonymous"
+/>
