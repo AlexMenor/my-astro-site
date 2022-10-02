@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "^4.5.9",
+    "@fontsource/inter": "^4.5.13",
     "astro": "^1.1.6",
     "astro-icon": "^0.7.3"
   },
