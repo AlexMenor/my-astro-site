@@ -132,7 +132,7 @@ export default function Stack() {
         {showImDone && (
           <button
             onClick={imDone}
-            className="text-sm text-slate-200/80 hover:opacity-60"
+            className="text-sm text-slate-200/80 hover:opacity-80"
           >
             I'm done please let me see
           </button>

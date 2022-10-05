@@ -116,9 +116,9 @@ for (const post of body.slice(0, 5)) {
               >solving problems.</span
             >
             <br />
-            I'm a technical person but I think that good understanding of other areas
-            like business or design is essential to build <span
-              class="text-slate-200/90">great products.</span
+            I'm a technical person but good understanding of other areas like business
+            and design is essential to build <span class="text-slate-200/90"
+              >great products.</span
             >
           </p>
         </div>
@@ -132,7 +132,7 @@ for (const post of body.slice(0, 5)) {
             <div class="flex justify-between items-center mt-12 md:mt-0">
               <h1 class="text-4xl font-display">My latest posts</h1>
               <a
-                class="block text-sm text-slate-200/80 hover:opacity-60"
+                class="block text-sm text-slate-200/80 hover:opacity-80"
                 href="http://dev.to/alexmenor"
                 target="_blank"
                 rel="noopener noreferrer">See all</a
@@ -142,6 +142,25 @@ for (const post of body.slice(0, 5)) {
             <div class="space-y-6 mt-8">
               {posts.map((post) => <Post {...post} />)}
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="md:px-16 px-5 xl:px-36 border-b border-slate-200/40">
+        <div
+          class="py-8 md:py-10 xl:border-x border-slate-200/40 xl:py-10 flex flex-col items-center justify-center"
+        >
+          <p class="text-xl md:text-2xl text-center md:max-w-[70%]">
+            You have an idea to kickstart or an early project to accelerate?
+          </p>
+          <div class="relative mt-4 group">
+            <div
+              class="absolute -inset-[2px] bg-cyan-700 rounded blur-sm animate-slowly-move group-hover:-inset-1 transition-all duration-300"
+            >
+            </div>
+            <a
+              class="block border border-slate-200/40 py-2 px-3 rounded md:text-lg relative bg-black"
+              href="mailto:alex.menor@icloud.com">Let's talk</a
+            >
           </div>
         </div>
       </section>
