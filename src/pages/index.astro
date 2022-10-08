@@ -65,41 +65,43 @@ for (const post of body.slice(0, 5)) {
         </div>
       </section>
       <section
-        class="xl:px-36 space-y-5 md:space-y-0 flex-col md:flex-row px-5 flex md:justify-between align-center py-8 md:py-7 border-b border-slate-200/40 uppercase text-sm md:text-base"
+        class="xl:px-36 space-y-5 md:space-y-0 flex-col md:flex-row px-5 md:px-9 flex md:justify-between align-center py-8 md:py-7 border-b border-slate-200/40 uppercase text-sm md:text-base"
       >
         <div class="flex items-center">
           <Icon
-            class="text-slate-200/40 w-10 h-10 flex-shrink-0"
+            class="text-slate-200/40 w-10 h-10 flex-shrink-0 md:w-8 md:h-8 lg:w-10 lg:h-10"
             pack="ph"
             name="globe-thin"
           />
           <div class="ml-3 md:ml-2">
-            <p>Freelance</p>
-            <p class="text-xs text-slate-200/50">Based in Spain</p>
+            <p class="md:text-sm lg:text-base">Freelance</p>
+            <p class="text-xs text-slate-200/50 md:text-[10px] lg:text-xs">
+              Based in Spain
+            </p>
           </div>
         </div>
         <div class="flex items-center">
           <Icon
-            class="text-slate-200/40 w-10 h-10 flex-shrink-0"
+            class="text-slate-200/40 w-10 h-10 flex-shrink-0 md:w-8 md:h-8 lg:w-10 lg:h-10"
             pack="ph"
             name="airplane-takeoff-thin"
           />
           <div class="ml-3 md:ml-2">
-            <p>3+ years of experience</p>
-            <p class="text-xs text-slate-200/50">
+            <p class="md:text-sm lg:text-base">3+ years of experience</p>
+            <p class="text-xs text-slate-200/50 md:text-[10px] lg:text-xs">
               Mainly in fast-paced environments
             </p>
           </div>
         </div>
         <div class="flex items-center">
           <Icon
-            class="text-slate-200/40 w-10 h-10 flex-shrink-0"
+            class="text-slate-200/40 w-10 h-10 flex-shrink-0 md:w-8 md:h-8 lg:w-10 lg:h-10"
             pack="ph"
             name="sketch-logo-thin"
           />
           <div class="ml-3 md:ml-2">
-            <p>Focus on delivering value</p>
-            <p class="text-xs text-slate-200/50">
+            <p class="md:text-sm lg:text-base">Focus on delivering value</p>
+            <p class="text-xs text-slate-200/50 md:text-[10px] lg:text-xs">
               Ready to wear different hats
             </p>
           </div>
@@ -123,7 +125,7 @@ for (const post of body.slice(0, 5)) {
           </p>
         </div>
       </section>
-      <section class="md:px-16 px-5 xl:px-36 border-b border-slate-200/40">
+      <section class="md:px-9 px-5 xl:px-36 border-b border-slate-200/40">
         <div
           class="py-8 md:py-10 xl:border-x border-slate-200/40 xl:py-10 flex flex-col md:flex-row justify-center"
         >
@@ -149,21 +151,13 @@ for (const post of body.slice(0, 5)) {
         <div
           class="py-8 md:py-10 xl:border-x border-slate-200/40 xl:py-10 flex flex-col items-center justify-center"
         >
-          <p
-            class="text-xl md:text-2xl text-center md:max-w-lg text-slate-200/70"
-          >
+          <p class="text-xl md:text-2xl text-center md:max-w-lg text-slate-200">
             You have an idea to kickstart or an early project to accelerate?
           </p>
-          <div class="relative mt-4 md:mt-5">
-            <a
-              class="block border border-slate-200/40 py-2 px-3 rounded md:text-lg relative bg-black peer z-10"
-              href="mailto:alex.menor@icloud.com">Let's talk</a
-            >
-            <div
-              class="absolute blur-3xl -inset-y-5 -inset-x-6 bg-gradient-to-r from-emerald-700 to-cyan-700 rounded peer-hover:-inset-y-7 peer-hover:-inset-x-8 transition-all duration-300"
-            >
-            </div>
-          </div>
+          <a
+            class="mt-4 md:mt-5 block border border-slate-200/40 py-2 px-3 rounded md:text-lg bg-black hover:opacity-80"
+            href="mailto:alex.menor@icloud.com">Let's talk</a
+          >
         </div>
       </section>
     </main>

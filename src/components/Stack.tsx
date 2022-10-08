@@ -39,7 +39,7 @@ function Card({
   return (
     <div
       onClick={onClick}
-      className={`h-32 w-20 md:h-24 md:w-16  lg:h-36 lg:w-24 ${
+      className={`h-32 w-20 md:h-24 md:w-16 lg:h-32 lg:w-20 xl:h-36 xl:w-24 ${
         flipped ? "" : "cursor-pointer"
       } rounded relative`}
       style={{ perspective: "500px" }}
