@@ -132,12 +132,13 @@ for (const post of body.slice(0, 5)) {
           <Stack client:visible />
           <div class="border-slate-200/40 md:border-l flex-1 md:pl-5 lg:px-5">
             <div class="flex justify-between items-center mt-12 md:mt-0">
-              <h1 class="text-4xl font-display">My latest posts</h1>
+              <h2 class="text-4xl font-display">My latest posts</h2>
               <a
                 class="block text-sm text-slate-200/80 hover:opacity-80"
                 href="http://dev.to/alexmenor"
                 target="_blank"
-                rel="noopener noreferrer">See all</a
+                rel="noopener noreferrer"
+                title="See all posts">See all</a
               >
             </div>
 
@@ -155,6 +156,7 @@ for (const post of body.slice(0, 5)) {
             You have an idea to kickstart or an early project to accelerate?
           </p>
           <a
+            title="Send me an email"
             class="mt-4 md:mt-5 block border border-slate-200/40 py-2 px-3 rounded md:text-lg bg-black hover:opacity-80"
             href="mailto:alex.menor@icloud.com">Let's talk</a
           >

@@ -128,7 +128,7 @@ export default function Stack() {
   return (
     <div className="flex-1 md:pr-5 lg:px-5">
       <div className="justify-between flex items-center">
-        <h1 className="text-4xl font-display">My stack</h1>
+        <h2 className="text-4xl font-display">My stack</h2>
         {showImDone && (
           <button
             onClick={imDone}

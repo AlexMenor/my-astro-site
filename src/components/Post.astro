@@ -35,9 +35,10 @@ const formattedPublishedAt = new Intl.DateTimeFormat("en-US", {
   href={url}
   target="_blank"
   rel="noopener noreferrer"
+  title={title}
 >
   <p class="text-xs text-slate-200/40 uppercase">{formattedPublishedAt}</p>
-  <h2 class="mt-1">{title}</h2>
+  <h3 class="mt-1">{title}</h3>
   <div class="flex items-center text-xs mt-1">
     <p class="mr-3 text-slate-200/60">{readingTimeMinutes} min read</p>
     {

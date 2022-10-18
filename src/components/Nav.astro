@@ -5,14 +5,17 @@ import linkedin from "../../public/assets/linkedin.svg?raw";
 
 const socials = [
   {
+    title: "Github",
     icon: github,
     url: "https://github.com/alexmenor",
   },
   {
+    title: "Twitter",
     icon: twitter,
     url: "https://twitter.com/alex4menor",
   },
   {
+    title: "Linkedin",
     icon: linkedin,
     url: "https://www.linkedin.com/in/alejandro-menor-molinero/",
   },
@@ -25,12 +28,13 @@ const socials = [
   <h1 class="font-display md:text-4xl text-3xl select-none">Alex Menor</h1>
   <div class="flex items-center space-x-3 lg:space-x-5 mb-1">
     {
-      socials.map(({ icon, url }) => (
+      socials.map(({ icon, url, title }) => (
         <a
           target="_blank"
           rel="noreferrer noopener"
           class="fill-current h-[18px] w-[18px] lg:h-6 lg:w-6 hover:opacity-80"
           href={url}
+          title={title}
         >
           <Fragment set:html={icon} />
         </a>

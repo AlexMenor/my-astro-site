@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+User-agent: *
+Sitemap: https://alexmenor.es/sitemap.xml
