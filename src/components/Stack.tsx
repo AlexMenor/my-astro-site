@@ -139,7 +139,7 @@ export default function Stack() {
             rel="noopener noreferrer"
             className="text-slate-200 mt-6 text-sm hover:text-slate-200/80 flex items-center"
           >
-            <technology.link.icon className="inline w-6 h-6" />
+            <technology.link.icon className="inline w-6 h-6 flex-shrink-0" />
             <p className="ml-2">{technology.link.text}</p>
           </a>
         </div>
