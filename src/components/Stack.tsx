@@ -81,13 +81,6 @@ const technologies = [
 
 export default function Stack() {
   const [showCards, setShowCards] = useState(false);
-  const [showCardsDelayed, setShowCardsDelayed] = useState(false);
-
-  useEffect(() => {
-    if (showCards) {
-      setTimeout(() => setShowCardsDelayed(true), 150);
-    }
-  }, [showCards]);
 
   const stackRef = useRef<HTMLDivElement>(null);
 
@@ -114,7 +107,7 @@ export default function Stack() {
           const highlighted = i === highlight;
           return (
             <Card
-              highlighted={showCardsDelayed && highlighted}
+              highlighted={highlighted}
               icon={technology.icon}
               key={technology.name}
               flipped={showCards}
