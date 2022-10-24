@@ -15,7 +15,7 @@ const technologies = [
     name: "TypeScript",
     icon: TypescriptIcon,
     description:
-      "TypeScript is a gamechanger. It allows you to move faster without losing confidence in your code. A sweet spot between static typed and dynamic languages.",
+      "TypeScript is a game changer. It allows you to move faster without losing confidence in your code. A sweet spot between static typed and dynamic languages.",
     link: {
       text: '"Do you really know TypeScript?", a post series to develop a better mental model for it',
       href: "https://dev.to/alexmenor/do-you-really-know-typescript-1-thinking-in-sets-55dm",
