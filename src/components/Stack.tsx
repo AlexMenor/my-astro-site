@@ -81,6 +81,18 @@ const technologies = [
 
 export default function Stack() {
   const [showCards, setShowCards] = useState(false);
+  const [showCardsFinishedAnimation, setShowCardsFinishedAnimation] =
+    useState(false);
+
+  useEffect(() => {
+    if (showCards) {
+      const timeout = setTimeout(
+        () => setShowCardsFinishedAnimation(true),
+        300
+      );
+      return () => clearTimeout(timeout);
+    }
+  }, [showCards]);
 
   const stackRef = useRef<HTMLDivElement>(null);
 
@@ -107,7 +119,7 @@ export default function Stack() {
           const highlighted = i === highlight;
           return (
             <Card
-              highlighted={highlighted}
+              highlighted={highlighted && showCardsFinishedAnimation}
               icon={technology.icon}
               key={technology.name}
               flipped={showCards}
@@ -161,7 +173,10 @@ function Card({
       style={{ perspective: "500px" }}
     >
       <div
-        style={{ opacity: highlighted && flipped ? 1 : 0 }}
+        style={{
+          opacity: highlighted && flipped ? 1 : 0,
+          willChange: "filter",
+        }}
         className="absolute -inset-1 rounded bg-cyan-500 blur-sm transition-opacity"
       ></div>
       <div
