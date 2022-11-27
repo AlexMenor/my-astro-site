@@ -38,8 +38,8 @@ const technologies = [
     description:
       "Node is very mature and an excellent backend runtime for most projects. Besides having a great community behind, being able to use TypeScript for your backend and your frontend is key for productiviy.",
     link: {
-      text: "Heroes, an app to get help from people nearby in an emergency",
-      href: "https://github.com/alexmenor/heroes",
+      text: "Flightradar24 chat, a chrome extension to chat about aviation",
+      href: "https://github.com/AlexMenor/flightradar24-chat",
       icon: GithubIcon,
     },
   },
