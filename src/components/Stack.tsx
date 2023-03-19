@@ -112,7 +112,7 @@ export default function Stack() {
   return (
     <div className="flex-1 md:pr-5 lg:px-5" ref={stackRef}>
       <div className="justify-between flex items-center">
-        <h2 className="text-4xl font-display">My stack</h2>
+        <h2 className="text-4xl font-display">What I like to use</h2>
       </div>
       <div className="flex flex-wrap gap-4 lg:gap-5 mt-8 justify-start ">
         {technologies.map((technology, i) => {
@@ -138,11 +138,14 @@ export default function Stack() {
           key={technology.name}
         >
           <p>{technology.description}</p>
+          <h3 className="mt-6 text-xs text-slate-200/50 uppercase">
+            If you want to know more
+          </h3>
           <a
             href={technology.link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-200 mt-6 text-sm hover:text-slate-200/80 flex items-center"
+            className="text-slate-200 mt-2 text-sm hover:text-slate-200/80 flex items-center"
           >
             <technology.link.icon className="inline w-6 h-6 flex-shrink-0" />
             <p className="ml-2">{technology.link.text}</p>
